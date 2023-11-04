@@ -1,0 +1,1243 @@
+algoritmo MenuPrincipal
+	
+	
+    repetir 
+        borrarPantalla
+        escribir "Menú Principal"
+        escribir "1) Numeros"
+        escribir "2) Cadenas y Arreglos"
+        escribir "3) Salir"
+        escribir "Ingrese una opción: "
+        leer opcionPrincipal
+        Segun  opcionPrincipal
+		
+		
+	
+			caso 1:
+				
+    
+    repetir
+        borrarPantalla
+        escribir "Menú Numeros"
+        escribir "1) Determinar cuánto se debe pagar por cierta cantidad de colas."
+        escribir "2) La asociación de vinicultores."
+        escribir "3) Dado dos números obtener el residuo."
+        escribir "4) El consultorio del Dr. Paez."
+        escribir "5) Escribir un algoritmo que lea cuatro números."
+        escribir "6) El banco XYZ."
+        escribir "7) Escribir un algoritmo que lea cuatro números."
+        escribir "8) El banco POO."
+        escribir "9) Pedir al usuario un número."
+        escribir "10) La asociación de vinicultores."
+        escribir "11) Pedir al usuario un número."
+        escribir "12) Fábricas El cometa."
+        escribir "13) Dado un número entero N, calcular e informar cuántos dígitos tiene dicho número."
+        escribir "14) Dado un número, determinar si es capicúa."
+        escribir "15) Escribir un algoritmo que presente los divisores de un numero."
+        escribir "16) Escribir un algoritmo que presente la suma de los divisores de un numero."
+        escribir "17) Escribir un algoritmo que presente la cantidad de los divisores de un numero."
+        escribir "18) Escribir un algoritmo que indique si un número es perfecto."
+        escribir "19) Dado un número N, determinar si es un número primo."
+        escribir "20) Dado dos números determinar si son primos gemelos."
+        escribir "21) Dado dos números determinar si son primos amigos."
+		escribir "22) Dado dos números determinar si son primos gemelos."
+        escribir "23) Dado dos números determinar si son primos amigos."
+        escribir "0) Volver al menú principal"
+        escribir "Ingrese una opción: "
+        leer opcionNumeros
+        Segun opcionNumeros HACER
+		caso 1:
+		
+		
+			Escribir "Ingrese la cantidad de colas: "
+			Leer cantidadColas
+			
+			Si cantidadColas > 23 Entonces
+				costoPorUnidad <- 0.50
+			SiNo
+				
+				costoPorUnidad <- 1.20
+			FinSi
+			
+			totalSinIVA <- cantidadColas * costoPorUnidad
+			iva <- totalSinIVA * 0.12
+			totalAPagar <- totalSinIVA + iva
+			
+			Escribir "Cantidad comprada: ", cantidadColas
+			Escribir "Costo por unidad: ", costoPorUnidad
+			Escribir "Total sin IVA: ", totalSinIVA
+			Escribir "IVA: ", iva
+			Escribir "Total a pagar: ", totalAPagar
+			EsperarTecla
+	
+			
+		caso 2:
+			Escribir "Ingrese el tipo de uva (A=1 o B=2): "
+			Leer tipoUva
+			
+			Escribir "Ingrese el tamaño de la uva (Tamaño 1=1 o Tamaño 2=2): "
+			Leer tamanoUva
+			
+			Si tipoUva = 1 Entonces
+				Si tamanoUva = 1 Entonces
+					Escribir "Ganancia del productor por la uva entregada: $100"
+				Sino
+					Escribir "Ganancia del productor por la uva entregada: $130"
+				FinSi
+			Sino
+				Si tamanoUva = 1 Entonces
+					Escribir "Ganancia del productor por la uva entregada: $70"
+				Sino
+					Escribir "Ganancia del productor por la uva entregada: $50"
+				FinSi
+				
+				Escribir "Presione Enter para salir"
+				Leer _  // Espera a que el usuario presione Enter antes de salir
+			FINSI
+			EsperarTecla  // Espera a que el usuario presione una tecla antes de cerrar
+		caso 3:
+			Escribir "Ingrese el primer número: "
+			Leer num1
+			
+			Escribir "Ingrese el segundo número: "
+			Leer num2
+			
+			residuo <- num1
+			
+			Mientras (residuo >= num2) Hacer
+				residuo <- residuo - num2
+			Fin Mientras
+			
+			Escribir "El residuo de la división es: ", residuo
+			EsperarTecla
+		caso 4:
+			Escribir "Ingrese el número de cita que se efectuará: "
+			Leer numeroCita
+			
+			Si numeroCita <= 3 Entonces
+				costoConsulta <- 200.00
+			Sino
+				Si numeroCita <= 5 Entonces
+					costoConsulta <- 150.00
+				Sino
+					Si numeroCita <= 8 Entonces
+						costoConsulta <- 100.00
+					Sino
+						costoConsulta <- 50.00
+					Fin Si
+				Fin Si
+			Fin Si
+			
+			Escribir "El costo de la consulta es de: $", costoConsulta
+			
+			Si numeroCita <= 8 Entonces
+				costoTratamiento <- (numeroCita - 3) * 200.00
+			Sino
+				costoTratamiento <- 5 * 200.00 + (numeroCita - 8) * 50.00
+			Fin Si
+			
+			Escribir "El monto total pagado por el tratamiento es de: $", costoTratamiento
+			
+			montoTotal <- costoConsulta + costoTratamiento
+			
+			Escribir "El monto total pagado por la cita y el tratamiento es de: $", montoTotal
+
+		caso 5:
+			Escribir "Ingrese el primer número: "
+			Leer numero1
+			
+			Escribir "Ingrese el segundo número: "
+			Leer numero2
+			
+			Escribir "Ingrese el tercer número: "
+			Leer numero3
+			
+			Escribir "Ingrese el cuarto número: "
+			Leer numero4
+			
+			Si numero1 * 2 = numero2 Entonces
+				Escribir "El primer número es la mitad del segundo número."
+			Sino
+				Escribir "El primer número no es la mitad del segundo número."
+			Fin Si
+			
+			Si numero4 MOD numero3 = 0 Entonces
+				Escribir "El tercer número es divisor del cuarto número."
+			Sino
+				Escribir "El tercer número no es divisor del cuarto número."
+Fin Si
+		caso 6:
+			// Leer el tipo de tarjeta del cliente (1, 2, 3 o cualquier otro)
+			Leer tipoTarjeta
+			
+			// Definir el límite de crédito inicial
+			Definir limiteCredito Como Real
+			
+			// Leer el límite de crédito actual del cliente
+			Leer limiteCredito
+			
+			// Definir el aumento porcentual del límite de crédito
+			Definir aumentoPorcentaje Como Real
+			
+			// Definir el aumento fijo en dólares
+			Definir aumentoFijo Como Real
+			
+			// Calcular el aumento porcentual y el aumento fijo según el tipo de tarjeta
+			Si tipoTarjeta = 1 Entonces
+				aumentoPorcentaje <- 25
+				aumentoFijo <- 20
+			Sino Si tipoTarjeta = 2 Entonces
+					aumentoPorcentaje <- 35
+					aumentoFijo <- 20
+				Sino Si tipoTarjeta = 3 Entonces
+						aumentoPorcentaje <- 40
+						aumentoFijo <- 20
+					Sino
+						aumentoPorcentaje <- 50
+						aumentoFijo <- 20
+					Fin Si
+					
+					// Calcular el nuevo límite de crédito
+					NuevoLimiteCredito <- limiteCredito + (limiteCredito * (aumentoPorcentaje / 100)) + aumentoFijo
+					
+					// Mostrar el nuevo límite de crédito
+					Escribir "El nuevo límite de crédito es: ", NuevoLimiteCredito
+				FINSI
+				FINSI
+					// Esperar a que el usuario presione una tecla para salir
+Esperar Tecla
+		caso 7:
+			// Leer los cuatro números
+			Leer numero1
+			Leer numero2
+			Leer numero3
+			Leer numero4
+			
+			// Verificar si el número 1 es divisor del número 3
+			Si numero3 MOD numero1 = 0 Entonces
+				Escribir numero1, " es divisor de ", numero3
+			Sino
+				Escribir numero1, " no es divisor de ", numero3
+			Fin Si
+			
+			// Verificar si el número 2 es el doble del número 4
+			Si numero2 = 2 * numero4 Entonces
+				Escribir numero2, " es el doble de ", numero4
+			Sino
+				Escribir numero2, " no es el doble de ", numero4
+			Fin Si
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+		caso 8:
+			// Leer el tipo de tarjeta del cliente (1, 2, 3 o cualquier otro)
+			Leer tipoTarjeta
+			
+			// Definir el límite de crédito inicial
+			Definir limiteCredito Como Real
+			
+			// Leer el límite de crédito actual del cliente
+			Leer limiteCredito
+			
+			// Definir el aumento porcentual del límite de crédito
+			Definir aumentoPorcentaje Como Real
+			
+			// Definir el aumento fijo en dólares
+			Definir aumentoFijo Como Real
+			
+			// Calcular el aumento porcentual y el aumento fijo según el tipo de tarjeta
+			Si tipoTarjeta = 1 Entonces
+				aumentoPorcentaje <- 25
+				aumentoFijo <- 20
+			Sino Si tipoTarjeta = 2 Entonces
+					aumentoPorcentaje <- 35
+					aumentoFijo <- 20
+				Sino Si tipoTarjeta = 3 Entonces
+						aumentoPorcentaje <- 40
+						aumentoFijo <- 20
+					Sino
+						aumentoPorcentaje <- 50
+						aumentoFijo <- 20
+					Fin Si
+					
+					// Calcular el nuevo límite de crédito
+					NuevoLimiteCredito <- limiteCredito + (limiteCredito * (aumentoPorcentaje / 100)) + aumentoFijo
+					
+					// Mostrar el nuevo límite de crédito
+					Escribir "El nuevo límite de crédito es: ", NuevoLimiteCredito
+				FinSi
+			FinSi
+			
+					// Esperar a que el usuario presione una tecla para salir
+Esperar Tecla
+
+		caso 9:
+			// Leer un número
+			Leer numero
+			
+			// Verificar si es negativo y menor que -20
+			Si numero < -20 Entonces
+				Escribir numero, " es un número negativo menor que -20"
+			Sino
+				Si numero MOD 2 = 0 Entonces
+					Escribir numero, " es un número positivo y par"
+				Sino
+					Si numero MOD 7 = 0 Entonces
+						Escribir numero, " es un número positivo e impar y múltiplo de 7"
+					Sino
+						Escribir numero, " es un número positivo e impar y no es múltiplo de 7"
+					Fin Si
+				Fin Si
+			Fin Si
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+
+		caso 10:
+			// Leer el tipo de pitajaya (Amarilla o Colorada)
+			Leer tipoPitajaya
+			
+			// Leer el tamaño de la pitajaya (1 o 2)
+			Leer tamañoPitajaya
+			
+			// Leer el precio inicial por quintal
+			Leer precioInicial
+			
+			// Definir variables para el precio final, descuento e IVA
+			Definir precioFinal Como Real
+			Definir descuento Como Real
+			Definir iva Como Real
+			
+			// Calcular el precio final
+			Si tipoPitajaya = "Amarilla" Entonces
+				Si tamañoPitajaya = 1 Entonces
+					descuento <- 10
+				Sino
+					descuento <- 15
+				Fin Si
+			Sino
+				Si tipoPitajaya = "Colorada" Entonces
+					Si tamañoPitajaya = 1 Entonces
+						descuento <- 20
+					Sino
+						descuento <- 20
+					Fin Si
+				Fin Si
+			Fin Si
+			
+			precioFinal <- precioInicial + (precioInicial * descuento / 100)
+			iva <- precioFinal * 0.12
+			
+			Escribir "El precio final por quintal es: ", precioFinal
+			Escribir "El IVA es: ", iva
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+
+		caso 11:
+			// Leer un número
+			Leer numero
+			
+			// Verificar si es par y menor que 10
+			Si numero MOD 2 = 0 Y numero < 10 Entonces
+				Escribir numero, " es un número par y menor que 10"
+			Sino
+				Si numero < 0 Y numero MOD 2 <> 0 Entonces
+					Escribir numero, " es un número negativo e impar"
+				Sino
+					Si numero < 0 Y numero MOD 5 = 0 Entonces
+						Escribir numero, " es un número negativo y es divisible por 5"
+					Fin Si
+				Fin Si
+			Fin Si
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+
+		caso 12:
+			// Leer la clave del artículo (1, 2, 3, 4, 5 o 6)
+			Leer claveArticulo
+			
+			// Leer el costo de la materia prima
+			Leer costoMateriaPrima
+			
+			// Definir variables para el costo de la mano de obra, gastos de fabricación y precio de venta
+			Definir costoManoObra Como Real
+			Definir gastosFabricacion Como Real
+			Definir precioVenta Como Real
+			
+			// Calcular el costo de la mano de obra
+			Si claveArticulo = 3 O claveArticulo = 4 Entonces
+				costoManoObra <- costoMateriaPrima * 0.75
+			Sino
+				Si claveArticulo = 1 O claveArticulo = 5 Entonces
+					costoManoObra <- costoMateriaPrima * 0.80
+				Sino
+					costoManoObra <- costoMateriaPrima * 0.85
+				Fin Si
+			Fin Si
+			
+			// Calcular los gastos de fabricación
+			Si claveArticulo = 2 O claveArticulo = 5 Entonces
+				gastosFabricacion <- costoMateriaPrima * 0.30
+			Sino
+				Si claveArticulo = 3 O claveArticulo = 6 Entonces
+					gastosFabricacion <- costoMateriaPrima * 0.35
+				Sino
+					gastosFabricacion <- costoMateriaPrima * 0.28
+				Fin Si
+			Fin Si
+			
+			// Calcular el precio de venta
+			precioVenta <- costoMateriaPrima + costoManoObra + gastosFabricacion + (costoMateriaPrima * 0.45)
+			
+			Escribir "El precio de venta del artículo es: ", precioVenta
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+		caso 13:
+			// Leer un número entero
+			Leer numero
+			
+			// Contar la cantidad de dígitos
+			Definir cantidadDigitos Como Entero
+			cantidadDigitos <- 0
+			
+			Mientras numero <> 0 Hacer
+				cantidadDigitos <- cantidadDigitos + 1
+				numero <- numero / 10
+			Fin Mientras
+			
+			Escribir "El número tiene ", cantidadDigitos, " dígitos."
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+		caso 14:
+			Escribir "Ingrese un número entero positivo:"
+			Leer numero
+			Si numero < 0 Entonces
+				Escribir "El número debe ser positivo."
+				
+			FinSi
+			aux <- numero // guardar el valor original del número
+			inverso <- 0 // inicializar el número inverso
+			Mientras numero > 0 Hacer
+				digito <- numero % 10 // obtener el último dígito del número
+				inverso <- inverso * 10 + digito // agregar el dígito al número inverso
+				numero <- numero / 10 // quitar el último dígito del número
+			FinMientras
+			Si aux = inverso Entonces
+				Escribir "El número", aux, "es capicúa."
+			SiNo
+				Escribir "El número", aux, "no es capicúa."
+  FinSi
+			Esperar Tecla
+		caso 15:
+			// Leer un número
+			Leer numero
+			
+			Escribir "Los divisores de ", numero, " son:"
+			
+			// Calcular y mostrar los divisores
+			Para i <- 1 Hasta numero Hacer
+				Si numero MOD i = 0 Entonces
+					Escribir i
+				Fin Si
+			Fin Para
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+		caso 16:
+			// Leer un número
+			Leer numero
+			
+			// Calcular la suma de los divisores
+			Definir sumaDivisores Como Entero
+			sumaDivisores <- 0
+			
+			Para i <- 1 Hasta numero Hacer
+				Si numero MOD i = 0 Entonces
+					sumaDivisores <- sumaDivisores + i
+				Fin Si
+			Fin Para
+			
+			Escribir "La suma de los divisores de ", numero, " es ", sumaDivisores
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+		caso 17:
+			// Leer un número
+			Leer numero
+			
+			// Contar la cantidad de divisores
+			Definir cantidadDivisores Como Entero
+			cantidadDivisores <- 0
+			
+			Para i <- 1 Hasta numero Hacer
+				Si numero MOD i = 0 Entonces
+					cantidadDivisores <- cantidadDivisores + 1
+				Fin Si
+			Fin Para
+			
+			Escribir "El número ", numero, " tiene ", cantidadDivisores, " divisores."
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+		caso 18:
+			// Leer un número
+			Leer numero
+			
+			// Calcular la suma de los divisores
+			Definir sumaDivisores Como Entero
+			sumaDivisores <- 0
+			
+			Para i <- 1 Hasta numero - 1 Hacer
+				Si numero MOD i = 0 Entonces
+					sumaDivisores <- sumaDivisores + i
+				Fin Si
+			Fin Para
+			
+			// Verificar si el número es perfecto
+			Si sumaDivisores = numero Entonces
+				Escribir numero, " es un número perfecto."
+			Sino
+				Escribir numero, " no es un número perfecto."
+			Fin Si
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+		caso 19:
+			// Leer un número
+			Leer numero
+			
+			// Inicializar el contador de divisores
+			Definir contadorDivisores Como Entero
+			contadorDivisores <- 0
+			
+			// Verificar si es un número primo
+			Si numero <= 1 Entonces
+				Escribir numero, " no es un número primo."
+			Sino
+				Para i <- 2 Hasta numero - 1 Hacer
+					Si numero MOD i = 0 Entonces
+						contadorDivisores <- contadorDivisores + 1
+					Fin Si
+				Fin Para
+				Si contadorDivisores = 0 Entonces
+					Escribir numero, " es un número primo."
+				Sino
+					Escribir numero, " no es un número primo."
+				Fin Si
+			Fin Si
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+		caso 20:
+			// Leer dos números
+			Leer numero1
+			Leer numero2
+			
+			// Verificar si son primos gemelos
+			Si numero1 > 1 Y numero2 > 1 Y numero1 - numero2 = 2 Entonces
+				Definir contadorDivisores1 Como Entero
+				Definir contadorDivisores2 Como Entero
+				
+				// Contar los divisores de ambos números
+				contadorDivisores1 <- 0
+				contadorDivisores2 <- 0
+				
+				Para i <- 2 Hasta numero1 - 1 Hacer
+					Si numero1 MOD i = 0 Entonces
+						contadorDivisores1 <- contadorDivisores1 + 1
+					Fin Si
+				Fin Para
+				
+				Para i <- 2 Hasta numero2 - 1 Hacer
+					Si numero2 MOD i = 0 Entonces
+						contadorDivisores2 <- contadorDivisores2 + 1
+					Fin Si
+				Fin Para
+				
+				Si contadorDivisores1 = 0 Y contadorDivisores2 = 0 Entonces
+					Escribir numero1, " y ", numero2, " son primos gemelos."
+				Sino
+					Escribir numero1, " y ", numero2, " no son primos gemelos."
+				Fin Si
+			Sino
+				Escribir numero1, " y ", numero2, " no son primos gemelos."
+			Fin Si
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+		caso 21:
+			// Leer dos números
+			Leer numero1
+			Leer numero2
+			
+			// Calcular la suma de los divisores de ambos números
+			Definir sumaDivisores1 Como Entero
+			Definir sumaDivisores2 Como Entero
+			
+			sumaDivisores1 <- 0
+			sumaDivisores2 <- 0
+			
+			Para i <- 1 Hasta numero1 - 1 Hacer
+				Si numero1 MOD i = 0 Entonces
+					sumaDivisores1 <- sumaDivisores1 + i
+				Fin Si
+			Fin Para
+			
+			Para i <- 1 Hasta numero2 - 1 Hacer
+				Si numero2 MOD i = 0 Entonces
+					sumaDivisores2 <- sumaDivisores2 + i
+				Fin Si
+			Fin Para
+			
+			// Verificar si son primos amigos
+			Si sumaDivisores1 = numero2 Y sumaDivisores2 = numero1 Entonces
+				Escribir numero1, " y ", numero2, " son primos amigos."
+			Sino
+				Escribir numero1, " y ", numero2
+			FINSI
+			Esperar Tecla
+		caso 0:
+		// Volver al menú principal
+		otro:
+		escribir "Opción no válida."
+	finSEGUN
+    hasta QUE opcionNumeros = 0
+	
+caso 2:
+	
+    
+    repetir
+        borrarPantalla
+        escribir "Menú Cadenas y Arreglos"
+        escribir "1) Dada n realizar un algoritmo."
+        escribir "2) Implementa un programa que calcule el promedio."
+        escribir "3) Dada n realizar un algoritmo."
+        escribir "4) Implementa un programa que copie los números."
+        escribir "5) Leer una secuencia de números."
+        escribir "6) Leer una secuencia de números."
+        escribir "7) Leer una secuencia de números hasta que se ingrese un número par."
+        escribir "8) Leer una secuencia de números."
+        escribir "9) Dado una frase indicar cuantas palabras."
+        escribir "10) Leer una secuencia de números hasta que se ingrese un número negativo."
+        escribir "11) Leer una secuencia de caracteres hasta que se ingrese un punto."
+        escribir "12) Leer una secuencia de números hasta que se ingrese un 0."
+		escribir "13) Dado dos números presentar los valores mayores a 5 entre ellos incluidos el numero inicialy final"
+		escribir "14) Elaborar un algoritmo que lea una serie de edades de los alumnos de la facultad FACI"
+        escribir "15) Dado dos números presentar los valores mayores a 5."
+        escribir "16) Elaborar un algoritmo que lea una serie de edades."
+        escribir "17) Dadas dos frase indicar la de mayor longitud."
+        escribir "18) Indicar cuantas ,.;: hay en una cadena."
+		escribir "19) Dado una cadena indicar cuantas vocales, consonantes y dígitos."
+		escribir "20) Indicar cuantas palabras hay en una frase."
+        escribir "21) Presentar la suma de los dígitos de una cedula."
+        escribir "22) Indicar si una palabra es palíndroma."
+        escribir "23) Presentar la posición de un carácter cualquiera dentro de una cadena."
+        escribir "0) Volver al menú principal"
+        escribir "Ingrese una opción: "
+        leer opcionCadenasArreglos
+        Segun  opcionCadenasArreglos
+		caso 1:
+			// Leer el valor de n
+			Leer n
+			
+			// Inicializar la respuesta con 2
+			Definir respuesta Como Entero
+			respuesta <- 2
+			
+			// Mostrar el primer valor (2)
+			Escribir respuesta
+			
+			// Generar la secuencia
+			Para i <- 2 Hasta n Hacer
+				respuesta <- respuesta * respuesta
+				Escribir respuesta
+			Fin Para
+		caso 2:
+			//Declarar los arreglos
+			Dimension arreglo[10], arreglo2[2]
+			//Declarar las variables de conteo y suma
+			Definir pares, impares, sumaPares, sumaImpares Como Entero
+			//Declarar las variables de promedio
+			Definir promedioPares, promedioImpares Como Real
+			//Inicializar las variables en cero
+			pares <- 0
+			impares <- 0
+			sumaPares <- 0
+			sumaImpares <- 0
+			promedioPares <- 0
+			promedioImpares <- 0
+			//Leer los elementos del primer arreglo
+			Para i <- 1 Hasta 10 Con Paso 1 Hacer
+				Escribir "Ingrese el elemento ", i, " del arreglo: "
+				Leer arreglo[i]
+			FinPara
+			//Recorrer el primer arreglo y verificar si los elementos son pares o impares
+			Para i <- 1 Hasta 10 Con Paso 1 Hacer
+				Si arreglo[i] mod 2 = 0 Entonces
+					//El elemento es par
+					pares <- pares + 1
+					sumaPares <- sumaPares + arreglo[i]
+				Sino
+					//El elemento es impar
+					impares <- impares + 1
+					sumaImpares <- sumaImpares + arreglo[i]
+				FinSi
+			FinPara
+			//Calcular los promedios
+			Si pares > 0 Entonces
+				promedioPares <- sumaPares / pares
+			FinSi
+			Si impares > 0 Entonces
+				promedioImpares <- sumaImpares / impares
+			FinSi
+			//Asignar los promedios al segundo arreglo
+			arreglo2[1] <- promedioPares
+			arreglo2[2] <- promedioImpares
+			//Mostrar el contenido del segundo arreglo
+			Escribir "El arreglo de los promedios es: "
+			Para i <- 1 Hasta 2 Con Paso 1 Hacer
+				Escribir arreglo2[i]
+			FinPara	
+			Esperar Tecla
+		caso 3:
+			// Declarar la variable n
+			Definir n Como Entero
+			
+			// Leer el valor de n desde el usuario
+			Escribir "Ingrese un valor para n: "
+			Leer n
+			
+			// Inicializar una variable para almacenar el resultado
+			Definir resultado Como Entero
+			
+			// Iniciar un ciclo para generar la secuencia
+			Mientras n >= 0 Hacer
+				resultado <- 20 - n
+				Escribir resultado
+				Si n > 0 Entonces
+					resultado <- resultado * (-1)
+					Escribir resultado
+				Fin Si
+				n <- n - 1
+			Fin Mientras
+			
+			// Esperar a que el usuario presione una tecla para salir
+			Esperar Tecla
+		caso 4:
+			// Declarar los arreglos
+			Dimension arreglo[5], arregloPositivo[5], arregloNegativo[5]
+			// Inicializar el arreglo original
+			arreglo[1] <- 2
+			arreglo[2] <- -6
+			arreglo[3] <- 4
+			arreglo[4] <- -9
+			arreglo[5] <- 12
+			// Declarar variables para contar los elementos positivos y negativos
+			Definir contadorPositivo, contadorNegativo Como Entero
+			contadorPositivo <- 0
+			contadorNegativo <- 0
+			// Recorrer el arreglo original
+			Para i <- 1 Hasta 5 Hacer
+				// Verificar si el elemento es positivo o negativo
+				Si arreglo[i] > 0 Entonces
+					// Incrementar el contador de positivos
+					contadorPositivo <- contadorPositivo + 1
+					// Agregar el elemento al arreglo de positivos
+					arregloPositivo[contadorPositivo] <- arreglo[i]
+				Sino
+					// Incrementar el contador de negativos
+					contadorNegativo <- contadorNegativo + 1
+					// Agregar el elemento al arreglo de negativos
+					arregloNegativo[contadorNegativo] <- arreglo[i]
+				FinSi
+			FinPara
+			// Imprimir los arreglos resultantes
+			Escribir "Arreglo de positivos:"
+			Para i <- 1 Hasta contadorPositivo Hacer
+				Escribir arregloPositivo[i]
+			FinPara
+			Escribir "Arreglo de negativos:"
+			Para i <- 1 Hasta contadorNegativo Hacer
+				Escribir arregloNegativo[i]
+			FinPara
+		caso 5:
+			//Declarar variables
+			Definir numero, sumaPares, contMultiplos Como Entero;
+			//Inicializar variables
+			numero <- 0;
+			sumaPares <- 0;
+			contMultiplos <- 0;
+			//Leer la secuencia de números hasta que se ingrese un negativo
+			Mientras numero >= 0 Hacer
+				Escribir "Ingrese un número:";
+				Leer numero;
+				//Verificar si el número es par
+				Si numero % 2 == 0 Entonces
+					//Sumar el número a la suma de los pares
+					sumaPares <- sumaPares + numero;
+				FinSi
+				//Verificar si el número es múltiplo de 3
+				Si numero % 3 == 0 Entonces
+					//Incrementar el contador de los múltiplos de 3
+					contMultiplos <- contMultiplos + 1;
+				FinSi
+				
+			FinMientras
+			//Mostrar los resultados
+			Escribir "La suma de los números pares es:", sumaPares;
+			Escribir "La cantidad de los números que son múltiplo de 3 es:", contMultiplos;
+			Esperar Tecla
+		caso 6:
+			Dimension arreglo[100]
+			Definir i, n, suma Como Entero
+			i <- 1
+			n <- 0
+			suma <- 0
+			Escribir "Ingrese una secuencia de números terminada en 0"
+			Repetir
+				Leer arreglo[i]
+				Si arreglo[i] <> 0 Entonces
+					n <- n + 1
+					i <- i + 1
+				FinSi
+			Hasta Que arreglo[i] = 0
+			Escribir "El arreglo tiene", n, "elementos"
+			Escribir "Los cuadrados de los elementos son:"
+			Para i <- 1 Hasta n Con Paso 1 Hacer
+				Escribir arreglo[i]^2
+				suma <- suma + arreglo[i]^2
+			FinPara
+			Escribir "La suma de los cuadrados es:", suma
+			Esperar Tecla
+		caso 7:
+			
+				Definir numero, contMay5, sumaMultiplos5 Como Entero
+				numero <- 0
+				contMay5 <- 0
+				sumaMultiplos5 <- 0
+				Escribir "Ingrese una secuencia de números hasta que ingrese un número par."
+				Repetir
+					Leer numero
+					Si numero > 5 Entonces
+						contMay5 <- contMay5 + 1
+					FinSi
+					Si numero MOD 5 = 0 Entonces
+						sumaMultiplos5 <- sumaMultiplos5 + numero
+					FinSi
+				Hasta Que numero MOD 2 = 0
+				Escribir "Cantidad de números mayores a 5:", contMay5
+				Escribir "Suma de múltiplos de 5:", sumaMultiplos5
+				Esperar Tecla
+
+		caso 8:
+			Dimension arreglo[100]
+			Definir i, numero Como Entero
+			i <- 1
+			numero <- 0
+			
+			Escribir "Ingrese una secuencia de números hasta que ingrese un número negativo."
+			
+			Repetir
+				Leer numero
+				Si numero >= 0 Entonces
+					arreglo[i] <- numero
+					i <- i + 1
+				FinSi
+			Hasta Que numero < 0
+			
+			Escribir "Los números ingresados son:"
+			Para i <- 1 Hasta i - 1 Hacer
+				Escribir arreglo[i]
+			FinPara
+			
+			Definir sumaCubos Como Entero
+			sumaCubos <- 0
+			Escribir "La suma de los cubos de los números es:"
+			Para i <- 1 Hasta i - 1 Hacer
+				sumaCubos <- sumaCubos + arreglo[i]^3
+			FinPara
+			Escribir sumaCubos
+			Esperar Tecla
+		caso 9:
+			Escribir "Ingrese una frase:"
+			Leer frase
+			frase <- frase + " "
+			tamaño <- longitud(frase)
+			p <- 1
+			cantidad <- 0
+			Para i <- 1 Hasta tamaño Con Paso 1 Hacer
+				Si (Subcadena(frase, i, i) = " ") entonces
+					palabra <- subcadena(frase, p, i - 1)
+					cantidad <- cantidad + 1
+					p <- i + 1
+				FinSi
+			FinPara
+			Escribir "La cantidad de palabras es:", cantidad
+			Esperar Tecla
+		caso 10:
+			Dimension arreglo[100]
+			Definir i Como Entero
+			
+			Escribir "Ingrese una secuencia de números hasta que ingrese un número negativo."
+			
+			i <- 1
+			
+			Mientras Verdadero Hacer
+				Leer arreglo[i]
+				Si arreglo[i] < 0 Entonces
+					i <- i - 1
+				
+				Sino
+					arreglo[i] <- arreglo[i] * 2
+					i <- i + 1
+				FinSi
+			FinMientras
+			
+			Escribir "El arreglo con los números duplicados es:"
+			Para i <- 1 Hasta i - 1 Hacer
+				Escribir arreglo[i]
+			FinPara
+			Esperar Tecla
+		caso 11:
+			//Declarar variables
+			Dimension arreglo[100]
+			Definir i Como Entero
+			
+			Escribir "Ingrese una secuencia de números hasta que ingrese un número negativo."
+			
+			i <- 1
+			
+			Mientras Verdadero Hacer
+				Leer arreglo[i]
+				Si arreglo[i] < 0 Entonces
+					i <- i - 1
+					
+				Sino
+					arreglo[i] <- arreglo[i] * 2
+					i <- i + 1
+				FinSi
+			FinMientras
+			
+			Escribir "El arreglo con los números duplicados es:"
+			Para i <- 1 Hasta i - 1 Hacer
+				Escribir arreglo[i]
+			FinPara
+			Esperar Tecla
+		caso 12:
+			//Declarar variables
+			Dimension arreglo1[100], arreglo2[100]
+			Definir i, j, n Como Entero
+			//Inicializar variables
+			i <- 1
+			j <- 1
+			n <- 0
+			//Leer la secuencia de números hasta que se ingrese un 0
+			Escribir "Ingrese un número (0 para terminar): "
+			Leer arreglo1[i]
+			Mientras arreglo1[i] <> 0 Hacer
+				//Incrementar el contador de elementos del arreglo1
+				n <- n + 1
+				//Incrementar el índice del arreglo1
+				i <- i + 1
+				//Leer el siguiente número
+				Escribir "Ingrese un número (0 para terminar): "
+				Leer arreglo1[i]
+			FinMientras
+			//Recorrer el arreglo1 y pasar a otro arreglo solo los números pares
+			Para i <- 1 Hasta n Con Paso 1 Hacer
+				//Verificar si el elemento actual es par
+				Si arreglo1[i] mod 2 = 0 Entonces
+					//Pasar el elemento par al arreglo2
+					arreglo2[j] <- arreglo1[i]
+					//Incrementar el índice del arreglo2
+					j <- j + 1
+				FinSi
+			FinPara
+			//Mostrar el contenido del arreglo2
+			Escribir "Los números pares del arreglo1 son: "
+			Para i <- 1 Hasta j-1 Con Paso 1 Hacer
+				Escribir arreglo2[i]
+			FinPara
+			Esperar Tecla
+		caso 13:
+			Dimension arreglo[100]
+			Definir i, numero Como Entero
+			i <- 1
+			numero <- 0
+			
+			Escribir "Ingrese una secuencia de números hasta que ingrese un número negativo."
+			
+			Repetir
+				Leer numero
+				Si numero >= 0 Entonces
+					arreglo[i] <- numero
+					i <- i + 1
+				FinSi
+			Hasta Que numero < 0
+			
+			Escribir "Los números ingresados son:"
+			Para i <- 1 Hasta i - 1 Hacer
+				Escribir arreglo[i]
+			FinPara
+			
+			Definir sumaCubos Como Entero
+			sumaCubos <- 0
+			Escribir "La suma de los cubos de los números es:"
+			Para i <- 1 Hasta i - 1 Hacer
+				sumaCubos <- sumaCubos + arreglo[i]^3
+			FinPara
+			Escribir sumaCubos
+			Esperar Tecla
+		caso 14:
+			//Definir el arreglo de edades
+			Dimension edades[100]
+			//Definir las variables de promedio, cantidad y suma
+			Definir n, promedio_general, cantidad_mayores, cantidad_menores, promedio_mayores, promedio_menores, suma, suma_mayores, suma_menores Como Entero
+			//Pedir el número de alumnos
+			Escribir "Ingrese el número de alumnos:"
+			Leer n
+			//Leer las edades y guardarlas en el arreglo
+			Para i<-1 Hasta n Hacer
+				Escribir "Ingrese la edad del alumno", i, ":"
+				Leer edades[i]
+			FinPara
+			//Inicializar las variables de promedio, cantidad y suma
+			promedio_general<-0
+			cantidad_mayores<-0
+			cantidad_menores<-0
+			promedio_mayores<-0
+			promedio_menores<-0
+			suma<-0
+			suma_mayores<-0
+			suma_menores<-0
+			//Recorrer el arreglo y realizar las operaciones
+			Para i<-1 Hasta n Hacer
+				//Sumar la edad actual a la suma total
+				suma<-suma+edades[i]
+				//Verificar si la edad es mayor o igual a 18
+				Si edades[i]>=18 Entonces
+					//Incrementar la cantidad de mayores de 18
+					cantidad_mayores<-cantidad_mayores+1
+					//Sumar la edad actual a la suma de mayores de 18
+					suma_mayores<-suma_mayores+edades[i]
+				Sino
+					//Incrementar la cantidad de menores de 18
+					cantidad_menores<-cantidad_menores+1
+					//Sumar la edad actual a la suma de menores de 18
+					suma_menores<-suma_menores+edades[i]
+				FinSi
+			FinPara
+			//Calcular los promedios
+			promedio_general<-suma/n
+			Si cantidad_mayores>0 Entonces
+				promedio_mayores<-suma_mayores/cantidad_mayores
+			FinSi
+			Si cantidad_menores>0 Entonces
+				promedio_menores<-suma_menores/cantidad_menores
+			FinSi
+			//Mostrar los resultados
+			Escribir "El promedio general de las edades de los alumnos es:", promedio_general
+			Escribir "La cantidad de alumnos mayores o iguales a 18 es:", cantidad_mayores
+			Escribir "El promedio de las edades de los alumnos mayores o iguales a 18 es:", promedio_mayores
+			Escribir "La cantidad de alumnos menores a 18 es:", cantidad_menores
+			Escribir "El promedio de las edades de los alumnos menores a 18 es:", promedio_menores
+			Esperar Tecla
+		caso 15:
+			Escribir "Ingrese el primer número:";
+			Leer num1;
+			Escribir "Ingrese el segundo número:";
+			Leer num2;
+			Si num1 > num2 Entonces
+				aux <- num1;
+				num1 <- num2;
+				num2 <- aux;
+			FinSi
+			Para i <- num1 + 1 Hasta num2 - 1 Con Paso 1 Hacer
+				Si i MOD 2 = 1 Entonces
+					Escribir i;
+				FinSi
+			FinPara
+		caso 16:
+			//Definir variables
+			Dimension sueldos[100]
+			
+			//Leer el número de empleados
+			Escribir "Ingrese el número de empleados:"
+			Leer n
+			//Leer los sueldos de cada empleado y guardarlos en el arreglo
+			suma <- 0
+			maximo <- 0
+			Para i <- 1 Hasta n Con Paso 1 Hacer
+				Escribir "Ingrese el sueldo del empleado", i, ":"
+				Leer sueldos[i]
+				//Sumar los sueldos para calcular el promedio
+				suma <- suma + sueldos[i]
+				//Comparar los sueldos para encontrar el máximo
+				Si sueldos[i] > maximo Entonces
+					maximo <- sueldos[i]
+				FinSi
+			FinPara
+			//Calcular el promedio
+			promedio <- suma / n
+			//Presentar los resultados
+			Escribir "El sueldo más alto de los empleados es:", maximo
+			Escribir "La cantidad de sueldos de los empleados es:", n
+			Escribir "El promedio de los sueldos de los empleados es:", promedio
+			Esperar Tecla
+		caso 17:
+			Escribir "Ingrese la primera frase"
+			Leer frase1
+			Escribir "Ingrese la segunda frase"
+			Leer frase2
+			long1 <- longitud(frase1)
+			long2 <- longitud(frase2)
+			Si long1 > long2 Entonces
+				Escribir "La frase de mayor longitud es:", frase1
+			Sino
+				Si long1 < long2 Entonces
+					Escribir "La frase de mayor longitud es:", frase2
+				Sino
+					Escribir "Las dos frases tienen la misma longitud"
+				FinSi
+			FinSi
+		caso 18:
+			Definir cadena, signos Como Caracter;
+			Definir contador, i Como Entero;
+			cadena <- "Esta es una cadena con algunos signos, como: punto, coma, punto y coma, y dos puntos.";
+			signos <- ",.;:";
+			contador <- 0;
+			Para i<-1 Hasta Longitud(cadena) Con Paso 1 Hacer
+				Si (signos, SubCadena(cadena, i, 1)) > 0 Entonces
+					contador <- contador + 1;
+				FinSi
+			FinPara
+			Escribir "La cadena tiene", contador, "signos de puntuación.";
+			Esperar Tecla
+		caso 19:
+			//Declarar variables
+		
+			cadena <- "";
+			vocal <- 0;
+			consonante <- 0;
+			digito <- 0;
+			otro <- 0;
+			//Pedir al usuario que ingrese la cadena
+			Escribir "Ingrese una cadena: ";
+			Leer cadena;
+			//Recorrer la cadena carácter por carácter
+			Para i <- 1 Hasta longitud(cadena) Con Paso 1 Hacer
+				//Obtener el carácter actual
+				Definir caracte Como Caracter;
+				caracter <- subcadena(cadena, i, i);
+				//Verificar si es una vocal
+				Si caracter = "a" o caracter = "e" o caracter = "i" o caracter = "o" o caracter = "u" o caracter = "A" o caracter = "E" o caracter = "I" o caracter = "O" o caracter = "U" Entonces
+					//Incrementar el contador de vocales
+					vocal <- vocal + 1;
+					//Verificar si es una consonante
+				
+						FinSi
+					FinPara
+					//Mostrar los resultados en pantalla
+					Escribir "La cadena tiene ", vocal, " vocales, ", consonante, " consonantes, ", digito, " dígitos y ", otro, " otros caracteres.";
+					Esperar Tecla
+		caso 20:
+			Escribir "Ingrese una frase:"
+			Leer frase
+			frase <- frase + " " //Agregamos un espacio al final para contar la última palabra
+			tamaño <- longitud(frase) //Obtenemos el número de caracteres de la frase
+			p <- 1 //Inicializamos la posición del último espacio
+			cantidad <- 0 //Inicializamos el contador de palabras
+			Para i <- 1 Hasta tamaño Con Paso 1 Hacer
+				Si (Subcadena(frase,i,i) = " ") Entonces
+					palabra <- Subcadena(frase,p,i-1) //Extraemos la palabra entre los espacios
+					cantidad <- cantidad + 1 //Incrementamos el contador de palabras
+					p <- i + 1 //Actualizamos la posición del último espacio
+				FinSi
+			FinPara
+			Escribir "La frase tiene", cantidad, "palabras"
+			Esperar Tecla
+		caso 21:
+			// Definir la variable que almacena la cédula
+			Definir cedula Como Entero;
+			// Definir la variable que almacena la suma de los dígitos
+			Definir suma Como Entero;
+			// Definir la variable que almacena el dígito actual
+			Definir digito Como Entero;
+			
+			// Pedir al usuario que ingrese la cédula
+			Escribir "Ingrese la cédula:";
+			Leer cedula;
+			
+			// Inicializar la suma en cero
+			suma <- 0;
+			
+			// Mientras la cédula sea mayor que cero
+			Mientras cedula > 0 Hacer
+				// Obtener el último dígito de la cédula usando el módulo 10
+				digito <- cedula % 10;
+				// Sumar el dígito a la suma
+				suma <- suma + digito;
+				// Eliminar el último dígito de la cédula usando la división entera por 10
+				cedula <- cedula / 10;
+			FinMientras
+			
+			// Mostrar la suma de los dígitos
+			Escribir "La suma de los dígitos de la cédula es:", suma;
+			Esperar Tecla
+		caso 22:
+			Definir palabra Como Caracter
+			Escribir "Ingrese una palabra:"
+			Leer palabra
+			Definir b Como Entero
+			b <- Longitud(palabra)
+			Definir a Como Logico
+			a <- Verdadero
+			Definir i Como Entero
+			i <- 1
+			Mientras a Y i <= b/2 Hacer
+				Si Subcadena(palabra,i,i) <> Subcadena(palabra,b-i+1,b-i+1) Entonces
+					a <- Falso
+				FinSi
+				i <- i + 1
+			FinMientras
+			Si a==Verdadero Entonces
+				Escribir palabra, " es palíndroma"
+			Sino
+				Escribir palabra, " no es palíndroma"
+			FinSi
+			Esperar Tecla
+		caso 23:
+			Definir palabra, caracter Como Caracter
+			Definir numero, a Como Entero
+			Escribir "Ingrese una palabra:"
+			Leer palabra
+			b <- Longitud(palabra)
+			Escribir "Ingrese un número entre 1 y ", b, ":"
+			Leer numero
+			Si numero >= 1 Y numero <= b Entonces
+				caracter <- Subcadena(palabra,numero,numero)
+				Escribir "El carácter en la posición ", numero, " de la palabra ", palabra, " es: ", caracter
+			SiNo
+				Escribir "El número ingresado es inválido."
+			FinSi
+			Esperar Tecla
+		caso 0:
+		otro:
+		escribir "Opción no válida."
+     FinSegun
+
+    hasta QUE opcionCadenasArreglos = 0
+	
+
+caso 3:
+	
+	escribir "Gracias por usar el sistema."
+	
+fin SEGUN
+Hasta Que opcionPrincipal = 3
+
+fin algoritmo
